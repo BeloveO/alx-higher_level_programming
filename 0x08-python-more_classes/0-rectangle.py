@@ -3,5 +3,7 @@
 A module with a rctangle that does nothing
 """
 class Rectangle:
-    """Defines a rectangle"""
+    """
+    Defines a rectangle
+    """
     pass
