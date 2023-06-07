@@ -15,7 +15,7 @@ def matrix_mul(m_a, m_b):
     for elems in m_b:
         if not isinstance(elems, list):
             raise TypeError("m_b must be a list of lists")
-    if m_a == [] or m_a ==[[]]:
+    if m_a == [] or m_a == [[]]:
         raise ValueError("m_a can't be empty")
     if m_b == [] or m_b == [[]]:
         raise ValueError("m_b can't be empty")
@@ -56,4 +56,3 @@ def matrix_mul(m_a, m_b):
                 i1 += 1
         r1.append(r2)
     return r1
-        
