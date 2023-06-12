@@ -5,4 +5,7 @@ Function that returns list of available attributes of an object
 
 
 def lookup(obj):
-    return (dir(obj))
+    """
+    Function to return list of available atrributes of an object
+    """
+    return dir(obj)
