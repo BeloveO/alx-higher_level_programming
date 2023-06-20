@@ -85,6 +85,7 @@ class Base:
         for index in range(len(list_cls)):
             list_ins.append(cls.create(**list_cls[index]))
         return list_ins
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Method that saves a CSV file """
