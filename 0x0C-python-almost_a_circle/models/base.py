@@ -3,6 +3,7 @@
 class Base to be the base of all other classes
 """
 import json
+import os.path
 
 
 class Base:
@@ -63,3 +64,23 @@ class Base:
             new = cls(10)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+        """
+        file = "{}.json".format(cls.__name__)
+
+        if os.path.exists(file) is False:
+            return []
+
+        with open(file, 'r') as f:
+            str_list = f.read()
+
+        list_cls = cls.from_json_string(str_list)
+        list_ins = []
+
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+        return list_ins
