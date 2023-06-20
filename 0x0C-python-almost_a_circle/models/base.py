@@ -143,3 +143,7 @@ class Base:
             list_ins.append(cls.create(**matrix[index]))
 
         return list_ins
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        pass
