@@ -7,23 +7,16 @@ module.exports = class Rectangle {
         this.height = h;
       } 
     }
-    Print () {
-        const width = parseInt(w);
-        const height = parseInt(h);
-        if (width) {
-            for (let i = 0; i < width; ++i) {
-                let j = 0;
-                
-                for (; j < height; ++j) {
-                    process.stdout.write('X');
-                }
-                if (j === height) {
-                    console.log('');
-                }
+    print () {
+        for (let i = 0; i < this.width; ++i) {
+            let j = 0;
+            
+            for (; j < this.height; ++j) {
+                process.stdout.write('X');
             }
-            if (i === width) {
+            if (j === this.width) {
                 console.log('');
             }
         } 
     }
-  }
+};
