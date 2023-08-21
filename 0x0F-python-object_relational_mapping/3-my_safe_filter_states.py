@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Write a script that takes in arguments and displays all 
-values in the states table of hbtn_0e_0_usa where name 
+Write a script that takes in arguments and displays all
+values in the states table of hbtn_0e_0_usa where name
 matches the argument safe from MySQL injections
 """
 import sys
@@ -12,4 +12,3 @@ if __name__ == "__main__":
     c = db.cursor()
     c.execute("SELECT * FROM `states`")
     [print(state) for state in c.fetchall() if state[1] == sys.argv[4]]
-    

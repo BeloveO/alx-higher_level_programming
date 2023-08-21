@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a script that takes in the name of a state as an argument and 
+Write a script that takes in the name of a state as an argument and
 lists all cities of that state, using the database hbtn_0e_4_usa
 """
 import sys
@@ -15,5 +15,3 @@ if __name__ == "__main__":
     states = c.fetchall()
 
     print(", ".join([state[1] for state in states]))
-
-    
