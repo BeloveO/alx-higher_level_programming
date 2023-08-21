@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """
-Write a script that adds the State object 
-“Louisiana” to the database hbtn_0e_6_usa
+Write a script that adds the State object “Louisiana” 
+to the database hbtn_0e_6_usa
 """
-
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -15,7 +14,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    louisiana = State(name="louisiana")
+
+    louisiana = State(name="Louisiana")
     session.add(louisiana)
     session.commit()
     print(louisiana.id)
