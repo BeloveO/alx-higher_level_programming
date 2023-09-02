@@ -7,14 +7,8 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/{}/{}/commits".format
-    (sys.argv[2], sys.argv[1])
-    req = requests.get(url)
-    commits = req.json()
-    try:
-        for i in range(10):
-            print("{}: {}".format(commits[i].get("sha"),
-                                  commits[i].get("commit").
-                                  get("author").get("name")))
-    except IndexError:
-        pass
+    url = "https://api.github.com"
+    uri = '{0}/repos/{1}/{2}/commits'.format(url, sys.argv[2], sys.argv[1])
+    req = requests.get(uri).json()
+    for i in req[:10]:
+        print(i['sha'] + ':', i['commit']['author']['name'])
